@@ -73,6 +73,16 @@ export default {
 </script>
 
 <style scoped>
+.background {
+  background-color: rgb(156, 133, 150, 0.72);
+  height: 33rem;
+  width: 28rem;
+  border-radius: 5px;
+}
+.background-white {
+  background-color: white;
+  height: auto;
+}
 .card {
   padding: 6% 2%;
   border: 0;
@@ -83,6 +93,25 @@ export default {
 .first {
   padding-right: 20px;
   padding-left: 20px;
+}
+.header {
+  color: white;
+  text-align: center;
+}
+.header-position {
+  padding-top: 12px;
+  padding-bottom: 10px;
+}
+h5 {
+  text-align: center;
+  color: #745b6f;
+  font-weight: bold;
+}
+p {
+  text-align: center;
+}
+.pagos {
+  font-size: 1.5rem;
 }
 .span-value {
   text-align: center !important;
@@ -99,31 +128,7 @@ section {
   display: flex;
   align-content: center;
 }
-.background {
-  background-color: rgb(156, 133, 150, 0.72);
-  height: 35rem;
-  width: 28rem;
-  /* margin-top: 13vh;
-  margin-left: 12vw; */
-  border-radius: 5px;
-}
-.background-white {
-  background-color: white;
-  height: 30rem;
-}
-.header {
-  color: white;
-  text-align: center;
-}
-.header-position {
-  padding-top: 12px;
-  padding-bottom: 10px;
-}
-h5 {
-  text-align: center;
-  color: #745b6f;
-  font-weight: bold;
-}
+
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -142,23 +147,12 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   border-radius: 15px;
 }
-p {
-  text-align: center;
-}
-.pagos {
-  font-size: 1.5rem;
-}
 
 @media only screen and (max-device-width: 320px) {
   .background {
-    background-color: rgb(156, 133, 150, 0.72);
-    height: auto;
-    width: 90vw;
-    /* margin-top: 1%;
-    margin-left: 1%; */
-    margin: auto;
+    height: 33rem;
+    width: 28rem;
     border-radius: 5px;
-    padding-bottom: 15px;
   }
   .background-white {
     background-color: white;
@@ -179,8 +173,8 @@ p {
   .background {
     background-color: rgb(156, 133, 150, 0.72);
     height: auto;
-    width: 300px;
-    margin-top: 30%;
+    width: 18rem;
+
     border-radius: 5px;
     padding-bottom: 15px;
   }
@@ -197,8 +191,7 @@ p {
   .background {
     background-color: rgb(156, 133, 150, 0.72);
     height: auto;
-    width: 340px;
-    margin-top: 20%;
+    width: 20rem;
     border-radius: 5px;
     padding-bottom: 20px;
   }
@@ -215,7 +208,7 @@ p {
   .background {
     background-color: rgb(156, 133, 150, 0.72);
     height: auto;
-    width: 390px;
+    width: 20rem;
     margin-top: 20%;
     border-radius: 5px;
     padding-bottom: 20px;
@@ -233,8 +226,7 @@ p {
   .background {
     background-color: rgb(156, 133, 150, 0.72);
     height: auto;
-    width: 448px;
-    margin-top: 20%;
+    width: 20rem;
     border-radius: 5px;
     padding-bottom: 20px;
   }

@@ -125,10 +125,6 @@ export default {
   padding-bottom: 3rem;
 }
 
-/* quitar */
-/* section {
-  flex-direction: column;
-} */
 hr {
   height: 1px;
   color: #988095;

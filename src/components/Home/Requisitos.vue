@@ -102,7 +102,7 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  justify-content: space-around;
   align-content: center;
 }
 .section {
@@ -119,7 +119,11 @@ export default {
     margin-bottom: 15%;
   }
 }
-@media only screen and (max-device-width: 1000px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1199px) {
+  .card {
+    margin-left: 0.05rem;
+    margin-right: 0.05rem;
+  }
   .section {
     height: auto;
   }
