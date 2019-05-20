@@ -6,18 +6,31 @@
       </div>
       <div class="background-white">
         <div class="container second">
-
           <div class="card monto-credit">
             <h5>Monto de tu crédito</h5>
             <p>$ 3,000 - $ 150,000</p>
-            <b-form-input id="monto-range" v-model="valueMonto" type="range" min="3000" max="150000" step="1000"></b-form-input>
+            <b-form-input
+              id="monto-range"
+              v-model="valueMonto"
+              type="range"
+              min="3000"
+              max="150000"
+              step="1000"
+            ></b-form-input>
             <span class="span-value">$ {{valueMonto}}</span>
           </div>
 
           <div class="card plazo-credit">
             <h5>Plazo de tu crédito</h5>
             <p>3 meses - 24 meses</p>
-            <b-form-input id="plazo-range" v-model="valuePlazo" type="range" min="3" max="24" step="1"></b-form-input>
+            <b-form-input
+              id="plazo-range"
+              v-model="valuePlazo"
+              type="range"
+              min="3"
+              max="24"
+              step="1"
+            ></b-form-input>
             <span class="span-value">{{valuePlazo}} meses</span>
           </div>
 
@@ -30,177 +43,210 @@
         </div>
       </div>
     </div>
-	</section>
+  </section>
 </template>
 
 <script>
-
 export default {
-  name: 'Calculadora',
+  name: "Calculadora",
   data() {
     return {
-      valueMonto: '3000',
-      valuePlazo: '3',
-    }
+      valueMonto: "3000",
+      valuePlazo: "3"
+    };
   },
   computed: {
-    pagos: function calculoPagos () {
-      const tasaAnual = .39;
-      const tasaMensual = tasaAnual/12;
+    pagos: function calculoPagos() {
+      const tasaAnual = 0.39;
+      const tasaMensual = tasaAnual / 12;
       let monto = this.valueMonto;
       let plazo = this.valuePlazo;
-      let tasaPlazo = Math.pow(1+tasaMensual, plazo);
-      let calculo = Number((tasaMensual*tasaPlazo*(monto/(tasaPlazo-1))).toFixed(2));    
+      let tasaPlazo = Math.pow(1 + tasaMensual, plazo);
+      let calculo = Number(
+        (tasaMensual * tasaPlazo * (monto / (tasaPlazo - 1))).toFixed(2)
+      );
       let pagos = calculo.toLocaleString();
       return pagos;
     }
   }
-}
+};
 </script>
 
 <style scoped>
-  .card {
-    padding: 6% 2%;
-    border: 0;
+.card {
+  padding: 6% 2%;
+  border: 0;
+}
+.card-pagos {
+  border-color: black;
+}
+.first {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.span-value {
+  text-align: center !important;
+  font-weight: bolder;
+}
+.span-pagos {
+  margin-top: 3%;
+}
+.second {
+  padding-right: 43px;
+  padding-left: 43px;
+}
+section {
+  display: flex;
+  align-content: center;
+}
+.background {
+  background-color: rgb(156, 133, 150, 0.72);
+  height: 35rem;
+  width: 28rem;
+  /* margin-top: 13vh;
+  margin-left: 12vw; */
+  border-radius: 5px;
+}
+.background-white {
+  background-color: white;
+  height: 30rem;
+}
+.header {
+  color: white;
+  text-align: center;
+}
+.header-position {
+  padding-top: 12px;
+  padding-bottom: 10px;
+}
+h5 {
+  text-align: center;
+  color: #745b6f;
+  font-weight: bold;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background-color: #745b6f !important;
+  margin-bottom: 5%;
+  outline: none;
+  border-radius: 15px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #988095;
+  cursor: pointer;
+  border-radius: 15px;
+}
+p {
+  text-align: center;
+}
+.pagos {
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-device-width: 320px) {
+  .background {
+    background-color: rgb(156, 133, 150, 0.72);
+    height: auto;
+    width: 90vw;
+    /* margin-top: 1%;
+    margin-left: 1%; */
+    margin: auto;
+    border-radius: 5px;
+    padding-bottom: 15px;
   }
-  .card-pagos {
-    border-color: black;
+  .background-white {
+    background-color: white;
+    height: auto;
   }
   .first {
+    margin: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .second {
     padding-right: 20px;
     padding-left: 20px;
   }
-  .span-value {
-  text-align: center !important;
-  font-weight: bolder;
+}
+
+@media only screen and (max-device-width: 359px) {
+  .background {
+    background-color: rgb(156, 133, 150, 0.72);
+    height: auto;
+    width: 300px;
+    margin-top: 30%;
+    border-radius: 5px;
+    padding-bottom: 15px;
   }
-  .span-pagos {
-    margin-top: 3%;
+  .background-white {
+    background-color: white;
+    height: auto;
   }
   .second {
-    padding-right: 43px;
-    padding-left: 43px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
-	.background {
-		background-color: rgb(156, 133, 150, .72);	
-		height: 35rem;
-		width: 28rem;
+}
+@media only screen and (min-device-width: 360px) and (max-device-width: 410px) {
+  .background {
+    background-color: rgb(156, 133, 150, 0.72);
+    height: auto;
+    width: 340px;
     margin-top: 20%;
     border-radius: 5px;
-	}
-	.background-white {
-		background-color: white;
-		height: 30rem;
-	}
-	.header {
-		color: white;
-		text-align: center;
-	}
-  .header-position {
-		padding-top: 12px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
-  h5 {
-    text-align: center;
-    color: #745B6F;
-    font-weight: bold;
+  .background-white {
+    background-color: white;
+    height: auto;
   }
-  input[type=range]{
-    -webkit-appearance: none;
-    appearance: none;
-    height: 5px;
-    background-color: #745B6F !important;
-    margin-bottom: 5%;
-    outline: none;
-    border-radius: 15px;
+  .second {
+    padding-right: 20px;
+    padding-left: 20px;
   }
-  input[type=range]::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #988095;
-    cursor: pointer;
-    border-radius: 15px;
+}
+@media only screen and (min-device-width: 411px) and (max-device-width: 456px) {
+  .background {
+    background-color: rgb(156, 133, 150, 0.72);
+    height: auto;
+    width: 390px;
+    margin-top: 20%;
+    border-radius: 5px;
+    padding-bottom: 20px;
   }
-  p {
-    text-align: center;
+  .background-white {
+    background-color: white;
+    height: auto;
   }
-  .pagos {
-    font-size: 1.5rem;
+  .second {
+    padding-right: 30px;
+    padding-left: 30px;
   }
-  @media only screen and (max-device-width:359px) {
-    .background {
-      background-color: rgb(156, 133, 150, .72);	
-      height: auto;
-      width: 300px;
-      margin-top: 30%;
-      border-radius: 5px;
-      padding-bottom: 15px;
-    }
-    .background-white {
-      background-color: white;
-      height: auto;
-    }
-    .second {
-      padding-right: 20px;
-      padding-left: 20px;
-    }
+}
+@media only screen and (min-device-width: 457px) and (max-device-width: 991px) {
+  .background {
+    background-color: rgb(156, 133, 150, 0.72);
+    height: auto;
+    width: 448px;
+    margin-top: 20%;
+    border-radius: 5px;
+    padding-bottom: 20px;
   }
-  @media only screen and (min-device-width:360px) and (max-device-width:410px) {
-    .background {
-      background-color: rgb(156, 133, 150, .72);	
-      height: auto;
-      width: 340px;
-      margin-top: 20%;
-      border-radius: 5px;
-      padding-bottom: 20px;
-    }
-    .background-white {
-      background-color: white;
-      height: auto;
-    }
-    .second {
-      padding-right: 20px;
-      padding-left: 20px;
-    }
+  .background-white {
+    background-color: white;
+    height: auto;
   }
-  @media only screen and (min-device-width:411px) and (max-device-width:456px) {
-    .background {
-      background-color: rgb(156, 133, 150, .72);	
-      height: auto;
-      width: 390px;
-      margin-top: 20%;
-      border-radius: 5px;
-      padding-bottom: 20px;
-    }
-    .background-white {
-      background-color: white;
-      height: auto;
-    }
-    .second {
-      padding-right: 30px;
-      padding-left: 30px;
-    }
+  .second {
+    padding-right: 30px;
+    padding-left: 30px;
   }
-  @media only screen and (min-device-width:457px) and (max-device-width:991px) {
-    .background {
-      background-color: rgb(156, 133, 150, .72);	
-      height: auto;
-      width: 448px;
-      margin-top: 20%;
-      border-radius: 5px;
-      padding-bottom: 20px;
-    }
-    .background-white {
-      background-color: white;
-      height: auto;
-    }
-    .second {
-      padding-right: 30px;
-      padding-left: 30px;
-    }
-  }
+}
 </style>
 
 
