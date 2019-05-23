@@ -55,7 +55,7 @@ h1 {
   font-weight: bolder;
 }
 
-@media only screen and (max-device-width: 320px) and (max-device-width: 490px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 490px) {
   .calculadora {
     margin-top: 1rem;
   }
@@ -68,7 +68,7 @@ h1 {
   }
 }
 
-@media only screen and (max-device-width: 491px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 491px) and (max-device-width: 1024px) {
   .calculadora {
     margin-top: 1rem;
   }

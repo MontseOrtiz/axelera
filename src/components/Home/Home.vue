@@ -5,6 +5,7 @@
     <ComoFuncionamos/>
     <Requisitos/>
     <Nosotros/>
+    <Banner/>
     <Footer/>
   </div>
 </template>
@@ -15,6 +16,7 @@ import BackgroundCalculator from "./BackgroundCalculator.vue";
 import ComoFuncionamos from "./ComoFuncionamos.vue";
 import Requisitos from "./Requisitos.vue";
 import Nosotros from "./Nosotros.vue";
+import Banner from "../Banner/Banner.vue";
 import Footer from "../Footer/Footer.vue";
 
 export default {
@@ -25,6 +27,7 @@ export default {
     ComoFuncionamos,
     Requisitos,
     Nosotros,
+    Banner,
     Footer
   }
 };

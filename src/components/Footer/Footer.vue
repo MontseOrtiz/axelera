@@ -1,15 +1,14 @@
 <template>
   <footer class="footer">
     <div class="row">
-      <div class="container general">
+      <div class="general">
         <div class="row first">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <img src="../../assets/axelera_blanco_2.png">
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 social-icons">
             <img class="icons" src="../../assets/001-facebook.png">
-            <img class="icons" src="../../assets/002-twitter.png">
-            <img class="icons" src="../../assets/003-google-plus.png">
+            <img class="icons" src="../../assets/LinkedIn.png">
           </div>
         </div>
         <div class="row">
@@ -24,12 +23,13 @@
             <p
               class="justify"
             >Prolongación Paseo de la Reforma 1015, Piso 9, Edificio B, Punta Santa Fe, Col. Desarrollo Santa Fe, CP 01376 , México DF.</p>
-            <p>Tel +52 (55) 4210-5300</p>
+            <p>Tel +52 (55) 2589-7161</p>
           </div>
           <div class="col-md-4 aviso">
-            <p class="right">Aviso de privacidad</p>
-            <p class="right">Términos y condiciones</p>
-            <img class="tres-icons" src="../../assets/axelera-3.png">
+            <a class="right" href="#" target="_blank">Aviso de privacidad</a>
+            <a class="right" href="#" target="_blank">Términos y condiciones</a>
+
+            <img class="tres-icons" src="../../assets/axelera_31.jpg">
           </div>
         </div>
       </div>
@@ -44,45 +44,52 @@ export default {
 </script>
 
 <style scoped>
+a {
+  color: #5f727f;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
 .aviso {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 .footer {
-  /* height: auto; */
   background-color: #dddddd;
   position: relative;
 }
 .first {
   padding-bottom: 2rem;
 }
+.general {
+  background-color: #dddddd;
+  margin-top: 30px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
 .icons {
   width: 25px;
   height: 30px;
   margin-right: 1rem;
+}
+.justify {
+  text-align: justify;
+}
+p {
+  color: #5f727f;
+}
+.right {
+  text-align: right;
+}
+
+.row {
+  margin: 0;
 }
 .tres-icons {
   align-self: flex-end;
   width: 230px;
   right: 6%;
   bottom: 8%;
-}
-p {
-  color: #5f727f;
-}
-.general {
-  background-color: #dddddd;
-  margin-top: 30px;
-}
-.right {
-  text-align: right;
-}
-.justify {
-  text-align: justify;
-}
-.row {
-  margin: 0;
 }
 .social-icons {
   display: flex;

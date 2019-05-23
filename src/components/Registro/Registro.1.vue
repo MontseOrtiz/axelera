@@ -1,7 +1,7 @@
 <template>
-  <div class="fondo">
+  <div>
     <Navbar/>
-    <form class="container center">
+    <form class="container center" @submit.prevent="register">
       <div class="form">
         <div class="container cont">
           <h3 class="header">¡ Regístrate !</h3>
@@ -10,47 +10,43 @@
               Nombre de usuario
               <span>*</span>
             </label>
-            <input class="input" type="text" placeholder required>
+            <input id="name" type="text" v-model="name" required autofocus>
           </div>
           <div class="row">
             <label>
               Correo
               <span>*</span>
             </label>
-            <input class="input" type="text" placeholder required>
+            <input id="email" type="email" v-model="email" required>
           </div>
           <div class="row">
             <label>
               Contraseña
               <span>*</span>
             </label>
-            <input class="input" type="password" placeholder required>
+            <input id="password" type="password" v-model="password" required>
           </div>
           <div class="row">
             <label>
               Confirmar contraseña
               <span>*</span>
             </label>
-            <input class="input" type="password" placeholder required>
+            <input id="password-confirm" type="password" v-model="password_confirmation" required>
           </div>
           <div class="row">
             <label>
               Celular
               <span>*</span>
             </label>
-            <input class="input" type="text" placeholder required>
+            <input id="phone" type="phone" v-model="phone" required>
           </div>
           <div class="row message">
             <label class="verification">Enviaremos un código de verificación por sms a este número.</label>
           </div>
           <input type="checkbox">
-          <label class="terminos">
-            Acepto las
-            <a href="#" target="_blank">políticas de privacidad</a> y los
-            <a href="#" target="_blank">términos y condiciones</a> .
-          </label>
+          <label class="terminos">Acepto los términos y condiciones y las políticas de privacidad.</label>
           <div class="row button">
-            <button>
+            <button type="submit">
               <router-link to="/solicita-tu-credito">Registrarse</router-link>
             </button>
           </div>
@@ -67,6 +63,29 @@ export default {
   name: "Registro",
   components: {
     Navbar
+  },
+  data() {
+    return {
+      name: "",
+      email: "",
+      password: "",
+      password_confirmation: "",
+      phone: ""
+    };
+  },
+  methods: {
+    register: function() {
+      let data = {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        phone: this.phone
+      };
+      this.$store
+        .dispatch("register", data)
+        .then(() => this.$router.push("/"))
+        .catch(err => console.log(err));
+    }
   }
 };
 </script>
@@ -80,11 +99,6 @@ export default {
 .center {
   display: flex;
   justify-content: center;
-}
-.fondo {
-  background-image: url(../../assets/Fondo-registro.jpg);
-  width: 100%;
-  height: 100%;
 }
 .form {
   /* max-width: 40rem !important; */
@@ -140,7 +154,6 @@ hr {
   font-size: 13px;
 }
 .terminos {
-  margin-left: 3%;
   margin-top: 2rem;
   font-size: 11px;
 }

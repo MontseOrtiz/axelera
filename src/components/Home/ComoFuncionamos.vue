@@ -50,7 +50,7 @@
             <hr>
             <p
               class="card-text"
-            >Una vez que aceptes la propuesta que preparamos para ti, agendamos una cita para recoger el contrato firmado en donde tu nos digas.</p>
+            >! Olvidate del papel ¡ firma tu contrato de forma digital desde nuestra plataforma.</p>
           </div>
         </div>
         <div class="card" style="max-width: 15rem;">

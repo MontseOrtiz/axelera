@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form class="login" @submit.prevent="login">
     <div class="form">
       <div class="container cont">
         <h5 class="header">INICIAR SESIÓN</h5>
@@ -8,7 +8,7 @@
           <span>*</span>
         </p>
         <div class="row">
-          <input class="input" type="text" placeholder>
+          <input required v-model="email" type="email">
         </div>
         <br>
         <p>
@@ -16,11 +16,11 @@
           <span>*</span>
         </p>
         <div class="row">
-          <input class="input" type="text" placeholder>
+          <input required v-model="password" type="password" placeholder="Password">
         </div>
         <br>
         <div class="row button">
-          <button>Iniciar Sesión</button>
+          <button type="submit">Iniciar Sesión</button>
         </div>
         <div class="a">
           <router-link to="/mail">¿Olvidaste tu contraseña?</router-link>
@@ -32,7 +32,23 @@
 
 <script>
 export default {
-  name: "IniciarSesionForm"
+  name: "IniciarSesionFormVuex",
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+    login: function() {
+      let email = this.email;
+      let password = this.password;
+      this.$store
+        .dispatch("login", { email, password })
+        .then(() => this.$router.push("/"))
+        .catch(err => console.log(err));
+    }
+  }
 };
 </script>
 
@@ -74,10 +90,12 @@ button {
   color: snow !important;
   text-align: center;
   margin-top: 20px;
+  /* padding: 4px 25px; */
   padding: 12px 50px;
   border: 0;
   border-radius: 5px;
   background-color: rgb(156, 133, 150);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  */
 }
 .button {
   justify-content: center;
@@ -107,6 +125,7 @@ hr {
   }
   .cont {
     padding-bottom: 50px;
+    /* margin-top: 7rem; */
   }
   .form-body {
     padding: 0;
@@ -124,6 +143,7 @@ hr {
   }
   .cont {
     padding-bottom: 50px;
+    /* margin-top: 7rem; */
   }
   .form-body {
     padding: 0;

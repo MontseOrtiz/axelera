@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding">
-        <img src="../../assets/adelant.jpg">
+        <img src="../../assets/adelant_1.jpg">
       </div>
     </div>
   </section>
@@ -45,9 +45,8 @@ hr {
   background-color: #3c3850;
   border: none;
 }
-
 img {
-  width: 24vw;
+  width: 100%;
 }
 p {
   color: #3c3850;

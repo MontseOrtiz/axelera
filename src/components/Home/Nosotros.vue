@@ -6,7 +6,7 @@
       </div>
       <p
         class="text"
-      >Axelera es una empresa mexicana enfocada en ofrecer soluciones financieras a los trabajadores de cualquier empresa de forma ágil, sencilla y personalzada.</p>
+      >Axelera es una empresa Mexicana enfocada en ofrecer soluciones financieras a los trabajadores de cualquier empresa de forma ágil, sencilla y personalizada.</p>
       <p
         class="text"
       >Entendemos que pedir un crédito suele ser un proceso largo y complicado, por eso nuestro compromiso es ofrecerte una experiencia amigable y darte respuesta en menos de 24 horas.</p>
@@ -23,27 +23,9 @@ export default {
 
 
 <style scoped>
-/* .container {
-  padding: 2rem 15rem;
-} */
-.text {
-  color: #745b6f;
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: x-large;
-  font-weight: bold;
-  font-stretch: extra-expanded;
-}
-.seccion {
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.container {
+  margin-left: 20vw;
+  margin-right: 20vw;
 }
 .image {
   display: flex;
@@ -55,17 +37,32 @@ export default {
 img {
   width: 140px;
 }
-/* @media only screen and (min-device-width: 320px) and (max-device-width: 490px) {
-  .seccion {
-    height: auto;
-    margin-bottom: 20%;
+.seccion {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.text {
+  color: #745b6f;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: x-large;
+  font-weight: bold;
+  font-stretch: extra-expanded;
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 600px) {
+  .container {
+    margin-left: 8vw;
+    margin-right: 8vw;
   }
 }
-@media only screen and (device-width: 768px) {
-  .seccion {
-    height: 35vh;
-  }
-} */
 </style>
 
 
