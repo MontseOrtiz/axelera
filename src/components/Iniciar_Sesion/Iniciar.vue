@@ -1,14 +1,14 @@
 <template>
   <div>
     <Navbar/>
-    <div class="fondo">
+    <div>
       <img src="../../assets/fondo-inicia.jpg" alt>
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 item">
+      <div class="cont-prin">
+        <div class="item item1">
           <IniciarSesionForm/>
           <!-- <IniciarSesionFormVuex/> -->
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 item">
+        <div class>
           <div class="register">
             <h1>¿Aún no estás registrado?</h1>
             <div class="button">
@@ -38,28 +38,25 @@ export default {
 </script>
 
 <style scoped>
-.fondo {
-  background-color: aqua;
-  /* background-image: url(../../); */
-}
 h1 {
   color: #3c3850;
   text-align: center;
 }
-.form {
-  display: flex;
-  justify-content: center;
-  padding-top: 4rem;
+img {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 .item {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
+
 button {
   font-size: 1.5rem;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1rem;
   padding: 12px 50px;
   border: 0;
   border-radius: 5px;
@@ -75,11 +72,46 @@ button a {
   text-decoration: none;
   background-color: transparent !important;
 }
-.row {
-  margin-top: 7rem;
+
+.cont-prin {
+  /* margin-top: 73.09px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .register {
   margin-bottom: 2rem;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 360px) {
+  button {
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 31px;
+    margin-top: 10p;
+  }
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 1049px) {
+  .cont-prin {
+    margin-top: 5vh;
+  }
+}
+@media only screen and (min-device-width: 1050px) and (max-device-width: 2400px) {
+  .item1 {
+    margin-top: 20vh;
+    margin-right: 10vw;
+  }
 }
 </style>
 
