@@ -6,7 +6,7 @@
           <h3 class="h3">FORMULARIO</h3>
           <h3>DE SOLICITUD</h3>
           <hr>
-          <p>AYÚDANOS LLENANDO EL FORMULARIO Y OBTÉN UNA PRE-AUTORIZACIÓN DE TU CRÉDITO EN MENOS DE 24 HORAS, EL PROCESO ES BREVE Y NO TE TOMARÁ MÁS DE 5 MINUTOS COMPLETARLO.</p>
+          <p>Ayúdanos llenando el formulario y obtén una pre-autorización de tu crédito en menos de 24 horas, el proceso es breve y no te tomará más de 5 minutos completarlo.</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-padding">

@@ -15,7 +15,7 @@
               <br>
               <div class="row">
                 <p>
-                  NOMBRE
+                  Nombre
                   <span>*</span>
                 </p>
               </div>
@@ -26,7 +26,7 @@
               <br>
               <div class="row">
                 <p>
-                  CORREO
+                  Correo
                   <span>*</span>
                 </p>
               </div>
@@ -36,7 +36,7 @@
               <br>
               <div class="row">
                 <p>
-                  MENSAJE
+                  Mensaje
                   <span>*</span>
                 </p>
               </div>

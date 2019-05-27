@@ -9,7 +9,7 @@
             <h3 class="header">¡ Regístrate !</h3>
             <div class="row">
               <label>
-                Nombre de usuario
+                Nombre(s) y Apellidos
                 <span>*</span>
               </label>
               <input class="input" type="text" placeholder required>
