@@ -3,10 +3,9 @@
     class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
     v-bind:class="{ 'navbarOpen': show }"
   >
-    <router-link class="dropdown-item color-text" to="/">
+    <router-link to="/">
       <img src="../../assets/axelera_logo.svg" class="logo">
     </router-link>
-
     <button
       class="navbar-toggler"
       type="button"

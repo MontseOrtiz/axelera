@@ -14,6 +14,7 @@ import Formulario2 from "../components/Solicitud/Formulario2.vue";
 import Formulario3 from "../components/Solicitud/Formulario3.vue";
 import Formulario4 from "../components/Solicitud/Formulario4.vue";
 import Formulario5 from "../components/Solicitud/Formulario5.vue";
+import Perfil from "../components/Perfil/Perfil.vue";
 
 Vue.use(Router);
 
@@ -88,6 +89,11 @@ export default new Router({
       path: "/solicita-tu-credito-5",
       name: "Formulario5",
       component: Formulario5
+    },
+    {
+      path: "/perfil",
+      name: "Perfil",
+      component: Perfil
     }
   ]
 });
