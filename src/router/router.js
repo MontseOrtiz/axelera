@@ -93,7 +93,10 @@ export default new Router({
     {
       path: "/perfil",
       name: "Perfil",
-      component: Perfil
+      component: Perfil,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 });

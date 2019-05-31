@@ -1,25 +1,24 @@
 <template>
-  <form class="login" @submit.prevent="login">
+  <form @submit.prevent="login">
     <div class="form">
-      <div class="container cont">
+      <div class="cont">
         <h5 class="header">INICIAR SESIÓN</h5>
-        <p>
+        <label for="username">
           Correo
           <span>*</span>
-        </p>
+        </label>
         <div class="row">
-          <input required v-model="email" type="email">
+          <input class="input" v-model.trim="username" name="username" type="text" placeholder>
         </div>
         <br>
-        <p>
+        <label for="password">
           Contraseña
           <span>*</span>
-        </p>
+        </label>
         <div class="row">
-          <input required v-model="password" type="password" placeholder="Password">
+          <input class="input" v-model.trim="password" name="password" type="password" placeholder>
         </div>
-        <br>
-        <div class="row button">
+        <div class="button">
           <button type="submit">Iniciar Sesión</button>
         </div>
         <div class="a">
@@ -31,30 +30,76 @@
 </template>
 
 <script>
+import router from "../../router/router";
+import store from "../../store/index.js";
+
 export default {
-  name: "IniciarSesionFormVuex",
+  name: "IniciarSesionForm",
   data() {
     return {
-      email: "",
+      username: "",
       password: ""
     };
   },
+  beforeCreate() {
+    if (store.state.isLogged) {
+      router.push("/perfil");
+    }
+  },
   methods: {
-    login: function() {
-      let email = this.email;
-      let password = this.password;
-      this.$store
-        .dispatch("login", { email, password })
-        .then(() => this.$router.push("/"))
-        .catch(err => console.log(err));
+    login() {
+      this.loader = true;
+      this.infoError = false;
+      this.$http
+        .post("http://axelera.credit/api/v1/oauth/token/", {
+          username: this.username,
+          password: this.password
+        })
+        .then(
+          response => {
+            localStorage.setItem("token", response.body.token);
+            store.commit("LOGIN_USER");
+            router.push("/perfil");
+          },
+          () => {
+            this.infoError = true;
+            this.loader = false;
+            this.password = "";
+          }
+        );
     }
   }
 };
 </script>
 
 <style scoped>
+.a {
+  margin-top: 8%;
+  margin-bottom: 2%;
+  text-align: center;
+}
+button {
+  color: snow;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(156, 133, 150);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button {
+  display: flex;
+  justify-content: center;
+}
+button a {
+  color: snow !important;
+  text-decoration: none;
+  background-color: transparent !important;
+}
 .cont {
-  padding: 15px 45px 10px;
+  padding: 1rem 2rem;
   margin-top: 3rem;
 }
 .center {
@@ -64,17 +109,25 @@ export default {
 }
 .form {
   background-color: white;
-  width: 25rem;
+  width: 28rem;
   height: auto;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 3rem;
+  margin-bottom: 1vh;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .header {
   text-align: center;
   color: #745b6f;
   margin-top: 5%;
   margin-block-end: 10%;
+}
+hr {
+  height: 1px;
+  color: black;
+  background-color: black;
+  border: none;
 }
 input.input {
   width: 100% !important;
@@ -85,50 +138,26 @@ input.input {
 span {
   color: red;
 }
-button {
-  font-size: 1.5rem;
-  color: snow !important;
-  text-align: center;
-  margin-top: 20px;
-  /* padding: 4px 25px; */
-  padding: 12px 50px;
-  border: 0;
-  border-radius: 5px;
-  background-color: rgb(156, 133, 150);
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  */
-}
-.button {
-  justify-content: center;
-}
-.a {
-  margin-top: 15%;
-  margin-bottom: 20%;
-  text-align: center;
-}
-button a {
-  color: snow !important;
-  text-decoration: none;
-  background-color: transparent !important;
-}
-hr {
-  height: 1px;
-  color: black;
-  background-color: black;
-  border: none;
-}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
+  button {
+    font-size: 1rem;
+  }
   .form {
     background-color: white;
     width: 18rem;
     height: auto;
     border-radius: 15px;
+    margin-bottom: 1vh;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
-  .cont {
-    padding-bottom: 50px;
-    /* margin-top: 7rem; */
-  }
+
   .form-body {
     padding: 0;
+  }
+  h5 {
+    font-size: 20px;
   }
   .height {
     padding: 0;
@@ -140,11 +169,11 @@ hr {
     width: 21rem;
     height: auto;
     border-radius: 15px;
+    margin-bottom: 1vh;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
-  .cont {
-    padding-bottom: 50px;
-    /* margin-top: 7rem; */
-  }
+
   .form-body {
     padding: 0;
   }

@@ -5,8 +5,8 @@
       <img src="../../assets/fondo-inicia.jpg" alt>
       <div class="cont-prin">
         <div class="item item1">
-          <IniciarSesionForm/>
-          <!-- <IniciarSesionFormVuex/> -->
+          <!-- <IniciarSesionForm/> -->
+          <IniciarSesionFormVuex/>
         </div>
         <div class>
           <div class="register">
@@ -25,14 +25,15 @@
 
 <script>
 import Navbar from "../Navbar/Navbar.vue";
-import IniciarSesionForm from "./IniciarSesionForm.vue";
-// import IniciarSesionFormVuex from "./IniciarSesionFormVuex";
+// import IniciarSesionForm from "./IniciarSesionForm.vue";
+import IniciarSesionFormVuex from "./IniciarSesionFormVuex";
 
 export default {
   name: "Iniciar",
   components: {
     Navbar,
-    IniciarSesionForm
+    // IniciarSesionForm
+    IniciarSesionFormVuex
   }
 };
 </script>

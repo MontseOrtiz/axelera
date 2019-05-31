@@ -6,7 +6,7 @@
         <div class="container cont">
           <h3 class="header">¡ Regístrate !</h3>
           <div class="row">
-            <label>
+            <label for="name">
               Nombre de usuario
               <span>*</span>
             </label>

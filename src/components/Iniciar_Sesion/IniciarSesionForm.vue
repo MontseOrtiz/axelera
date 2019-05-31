@@ -3,18 +3,18 @@
     <div class="form">
       <div class="cont">
         <h5 class="header">INICIAR SESIÓN</h5>
-        <p>
+        <label>
           Correo
           <span>*</span>
-        </p>
+        </label>
         <div class="row">
           <input class="input" type="text" placeholder>
         </div>
         <br>
-        <p>
+        <label>
           Contraseña
           <span>*</span>
-        </p>
+        </label>
         <div class="row">
           <input class="input" type="text" placeholder>
         </div>
