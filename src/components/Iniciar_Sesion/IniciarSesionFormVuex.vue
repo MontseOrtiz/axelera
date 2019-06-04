@@ -48,12 +48,14 @@ export default {
   },
   methods: {
     login() {
-      this.loader = true;
-      this.infoError = false;
       this.$http
-        .post("http://axelera.credit/api/v1/oauth/token/", {
+        .post("http://axelera.credit/api/v1/oauth/token", {
+          grant_type: "password",
+          client_id: 3,
+          client_secret: "2KnYpVPbWpaMqZhb7NDsbKS14Yhutb6IrTM5uENh",
           username: this.username,
-          password: this.password
+          password: this.password,
+          scope: this.scope
         })
         .then(
           response => {
@@ -62,8 +64,6 @@ export default {
             router.push("/perfil");
           },
           () => {
-            this.infoError = true;
-            this.loader = false;
             this.password = "";
           }
         );
