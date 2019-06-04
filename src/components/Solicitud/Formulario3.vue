@@ -56,7 +56,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <p>
-                Delegación / Domicilio
+                Delegación / Municipio
                 <span>*</span>
               </p>
               <input class="input" type="text" required>

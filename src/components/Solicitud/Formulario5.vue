@@ -102,7 +102,7 @@ button {
   background-color: rgb(156, 133, 150, 0.72);
 }
 .cont-color {
-  padding: 30px;
+  padding: 2%;
   border-radius: 15px;
   width: 90vw;
 }
